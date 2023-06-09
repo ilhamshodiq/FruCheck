@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Capstone FruCheck</string>
+    <string name="login">Login</string>
+    <string name="daftar">Daftar</string>
 </resources>

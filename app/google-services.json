@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922654580681",
+    "project_id": "capstone-frucheck",
+    "storage_bucket": "capstone-frucheck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922654580681:android:108681b44c743483915218",
+        "android_client_info": {
+          "package_name": "com.the12smb.capstonefrucheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922654580681-7493fjmn3hccjdgs7nnb2hgnvcr1jmt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLs8UG0SIJngScKFDKIpEEkVkk9DZHTpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922654580681-7493fjmn3hccjdgs7nnb2hgnvcr1jmt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
