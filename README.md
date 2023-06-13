@@ -1,1 +1,1 @@
-Machine Learning branch for FruCheck Project
+Machine Learning branch for "FruCheck" project Bangkit 2023 Batch 1
