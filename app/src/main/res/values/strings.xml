@@ -1,5 +1,17 @@
 <resources>
-    <string name="app_name">Capstone FruCheck</string>
+    <string name="app_name">FruCheck</string>
     <string name="login">Login</string>
     <string name="daftar">Daftar</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="camera">camera</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tombol_camera">tombol camera</string>
+    <string name="tombol_galeri">tombol galeri</string>
+    <string name="iv_belum_ada_gambar">iv belum ada gambar</string>
+    <string name="tombol_hapus_gambar">tombol hapus gambar</string>
+    <string name="tombol_submit">tombol submit</string>
+    <string name="tombol_logout">tombol logout</string>
+    <string name="title_home">Home</string>
+    <string name="upload">Upload</string>
 </resources>
