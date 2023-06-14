@@ -5,3 +5,18 @@
 # FruCheck: Detect Your Fresh Fruit!
 
 FruCheck is a fruit and vegetable spoilage detection application. Using Artificial Intelligence, this application is capable of identifying fruits and vegetables that have spoiled or are not fresh. Additionally, the application provides nutritional information and storage tips for each fruit and vegetable. With FruCheck, users can choose and consume fresh products of the highest quality!
+
+## Table of Contents
+
+- [Features](#features)
+- [Documentation](#documentation)
+- [Authors](#authors)
+
+
+## Authors
+- [@Muhammad Emillul Fata](https://github.com/emlfata)
+- [@Salmavita Apsarini](https://github.com/salmavitaa24)
+- [@Khailila Eka Oktavianingsih](https://github.com/khailila)
+- [@Yoshi Inne Herawati](https://github.com/yoshiinne64)
+- [@Ilham Shodiq Mu’arif Billah](https://github.com/ilhamshodiq)
+- [@Tegar Nur Hidayat](https://github.com/tegarnurhidayat)
