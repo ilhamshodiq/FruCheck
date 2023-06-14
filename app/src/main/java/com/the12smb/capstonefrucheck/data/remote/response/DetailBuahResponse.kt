@@ -2,10 +2,10 @@ package com.the12smb.capstonefrucheck.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class BuahResponse(
+data class DetailBuahResponse(
 
-	@field:SerializedName("buah")
-	val buah: List<BuahItem>,
+	@field:SerializedName("data")
+	val data: Data,
 
 	@field:SerializedName("message")
 	val message: String? = null,
@@ -14,7 +14,7 @@ data class BuahResponse(
 	val error: Boolean? = null
 )
 
-data class BuahItem(
+data class Data(
 
 	@field:SerializedName("photoUrl")
 	val photoUrl: String? = null,

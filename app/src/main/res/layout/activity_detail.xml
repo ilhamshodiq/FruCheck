@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,129 +7,131 @@
     android:orientation="vertical"
     tools:context=".view.detail.DetailActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvImage"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
-
-        <ImageView
-            android:id="@+id/ivDetailPhoto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/detail_photo"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvFruitName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvImage"
-        tools:text="@string/nama_buah"/>
-
-
-    <LinearLayout
-        android:id="@+id/linearmanfaat"
-        android:orientation="vertical"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
-        <TextView
-            android:id="@+id/tvTitleManfaat"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvFruitName"
-            tools:text="@string/manfaat_buah"/>
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvFruitManfaat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="normal"
-            android:layout_marginTop="6dp"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitleManfaat"
-            tools:text="@string/ini_deskripsi"/>
-    </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/ivDetailPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@string/detail_photo"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvFruitName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="24dp"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvImage"
+                tools:text="@string/nama_buah"/>
 
 
-    <TextView
-        android:id="@+id/tvTitleNutrisi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFruitManfaat"
-        tools:text="@string/kandungan_buah"/>
+            <TextView
+                android:id="@+id/tvTitleManfaat"
+                android:text="@string/manfaat_buah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFruitName"/>
 
-    <TextView
-        android:id="@+id/tvFruitNutrisi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="6dp"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleNutrisi"
-        tools:text="@string/ini_deskripsi"/>
+            <LinearLayout
+                android:id="@+id/linearmanfaat"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/tvTitlePenyimpanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFruitNutrisi"
-        tools:text="@string/penyimpanan_buah"/>
 
-    <TextView
-        android:id="@+id/tvFruitPenyimpanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="6dp"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitlePenyimpanan"
-        tools:text="@string/ini_deskripsi"/>
+            <TextView
+                android:id="@+id/tvTitleNutrisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/kandungan_buah"/>
 
-</LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearnutrisi"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvTitlePenyimpanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/penyimpanan_buah"/>
+
+            <LinearLayout
+                android:id="@+id/linearpenyimpanan"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvTitlePenyimpanan"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

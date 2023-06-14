@@ -32,7 +32,7 @@ class BuahAdapter(private val listBuah: List<BuahItem>) :
 
         holder.itemView.setOnClickListener{
             val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-            //intentDetail.putExtra(DetailActivity.EXTRA_ID, users.id)// intent id
+            intentDetail.putExtra(DetailActivity.EXTRA_ID, buah.id.toString())// intent id
             holder.itemView.context.startActivity(intentDetail)
         }
     }

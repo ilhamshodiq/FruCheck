@@ -60,8 +60,8 @@
     </string>
     <string name="detail_photo">detail photo</string>
     <string name="nama_buah">Nama Buah</string>
-    <string name="manfaat_buah">Manfaat Buah</string>
+    <string name="manfaat_buah">Manfaat</string>
     <string name="ini_deskripsi">ini deskripsi</string>
-    <string name="kandungan_buah">Kandungan Buah</string>
-    <string name="penyimpanan_buah">Penyimpanan Buah</string>
+    <string name="kandungan_buah">Kandungan Nutrisi</string>
+    <string name="penyimpanan_buah">Penyimpanan</string>
 </resources>
