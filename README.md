@@ -13,6 +13,13 @@ FruCheck is a fruit and vegetable spoilage detection application. Using Artifici
 - [Authors](#authors)
 
 ## Features
+- Register
+- Login
+- Fruit and Vegetable spoilage detection
+- Health benefits
+- Nutritional information
+- Storage tips
+- Recipe ideas
 
 ## Prerequisites
 - Android 4.4 KitKat
