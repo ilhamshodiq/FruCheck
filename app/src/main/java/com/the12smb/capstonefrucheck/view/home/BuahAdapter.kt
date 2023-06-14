@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.the12smb.capstonefrucheck.data.remote.response.BuahItem
 import com.the12smb.capstonefrucheck.databinding.ItemCardviewBinding
+import com.the12smb.capstonefrucheck.view.detail.DetailActivity
 
 class BuahAdapter(private val listBuah: List<BuahItem>) :
     RecyclerView.Adapter<BuahAdapter.ViewHolder>() {
@@ -29,11 +30,11 @@ class BuahAdapter(private val listBuah: List<BuahItem>) :
             .load(buah.photoUrl)
             .into(holder.ivItemPhoto)
 
-//        holder.itemView.setOnClickListener{
-//            val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-//            intentDetail.putExtra(DetailActivity.EXTRA_ID, users.id)// intent id
-//            holder.itemView.context.startActivity(intentDetail)
-//        }
+        holder.itemView.setOnClickListener{
+            val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
+            //intentDetail.putExtra(DetailActivity.EXTRA_ID, users.id)// intent id
+            holder.itemView.context.startActivity(intentDetail)
+        }
     }
 
     override fun getItemCount(): Int {

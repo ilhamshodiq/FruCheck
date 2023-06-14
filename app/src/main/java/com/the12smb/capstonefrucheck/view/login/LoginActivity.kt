@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
 
-
     }
 
     private fun setupView() {
@@ -32,4 +31,6 @@ class LoginActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
     }
+
+    
 }

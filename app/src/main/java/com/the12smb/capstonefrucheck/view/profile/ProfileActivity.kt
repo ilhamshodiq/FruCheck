@@ -20,16 +20,18 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNav() {
-        binding.bottomnav.selectedItemId = R.id.navigation_home
+        binding.bottomnav.selectedItemId = R.id.navigation_profile
 
         binding.bottomnav.setOnItemSelectedListener{
             when(it.itemId){
                 R.id.navigation_home -> {
                     startActivity(Intent(this, HomeActivity::class.java))
+                    overridePendingTransition(0, 0)
                     true
                 }
                 R.id.navigation_upload -> {
                     startActivity(Intent(this, UploadActivity::class.java))
+                    overridePendingTransition(0, 0)
                     true
                 }
                 R.id.navigation_profile -> {

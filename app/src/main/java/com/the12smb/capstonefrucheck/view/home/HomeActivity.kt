@@ -75,10 +75,12 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.navigation_upload -> {
                     startActivity(Intent(this, UploadActivity::class.java))
+                    overridePendingTransition(0, 0)
                     true
                 }
                 R.id.navigation_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
+                    overridePendingTransition(0, 0)
                     true
                 }
                 else -> false
