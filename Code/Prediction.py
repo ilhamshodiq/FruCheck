@@ -4,47 +4,86 @@
 # In[ ]:
 
 
-### FOR PREDICTION USING TF SERVING ###
-import requests
-import numpy as np
+### FOR SERVER PURPOSES ###
+
+import os
+from flask import Flask, request
 from PIL import Image
+import numpy as np
+import tensorflow as tf
+import tensorflow.keras.models import load_model
+from google.cloud import storage
 
-# URL endpoint TensorFlow Serving
-url = "http://localhost:8501/v1/models/model_name:predict"  # endpoint URL
+app = Flask(name)
 
-# Load and preprocess the image
-image_path = "../Datasets/Test/RottenCarrot/Carrot_Rotten-64_augmented.jpg"  # Image path
-image = Image.open(image_path)
-image = image.resize((64, 64))
-image_array = np.array(image) / 255.0
-input_image = np.expand_dims(image_array, axis=0)
+# Initialize the H5 model
+model = load_model('./TF SERVING/frucheck-model.h5')
 
-# Convert input to JSON format
-input_data = {
-    "instances": input_image.tolist()
-}
+# Initialize the Google Cloud storage client
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./serviceAccountKey.json"
+storage_client = storage.Client()
+bucket_name = 'history-user'
 
-# Send prediction request
-response = requests.post(url, json=input_data)
+@app.route('/upload', methods=['POST'])
+def upload_image():
+    if 'image' not in request.files:
+        return 'No image uploaded!', 400
 
-# Get prediction result
-predictions = np.array(response.json()["predictions"][0])
+    image_file = request.files['image']
+    
+    if image_file:
+        temp_image_path = 'temp_image.jpg'
+        image_file.save(temp_image_path)
+        
+        image = Image.open(temp_image_path)
+        image = image.convert('RGB')
+        image = image.resize((64, 64))
+        image_array = np.array(image) / 255.0
+        input_image = np.expand_dims(image_array, axis=0)
+        
+        class_names = ['ApelSegar', 
+                       'PisangSegar', 
+                       'WortelSegar', 
+                       'JerukSegar', 
+                       'KentangSegar', 
+                       'TomatSegar', 
+                       'ApelBusuk', 
+                       'PisangBusuk', 
+                       'WortelBusuk', 
+                       'JerukBusuk', 
+                       'KentangBusuk', 
+                       'TomatBusuk']
 
-# Get predicted class index
-predicted_class = np.argmax(predictions)
-predicted_label = class_names[predicted_class]
+        predictions = model.predict(input_image)
+        predicted_class = np.argmax(predictions)
 
-# CLASSIFICATION RESULTS VARIABLES
-label_predicted = predicted_label.replace('Segar', '').replace('Busuk', '') # Klasifikasi nama buah/sayur
-freshness = 'Segar' if 'Segar' in class_name else 'Busuk' # Menentukan segar atau busuk
+        if predicted_class >= len(class_names):
+            return 'Invalid Prediction Index: ' + str(predicted_class) + '\nLength of class_names: ' + str(len(class_names)), 500
+        
+        predicted_label = class_names[predicted_class]
+        predicted_label_str = str(predicted_label)
+        
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(image_file.filename)
+        blob.upload_from_filename(temp_image_path)
+        
+        os.remove(temp_image_path)
+        
+        label_predicted = predicted_label.replace('Segar', '').replace('Busuk', '')
+        freshness = 'Segar' if 'Segar' in predicted_label else 'Busuk'
+        
+        predicted_prob = np.max(predictions)
+        accuracy = predicted_prob * 100
+        
+        print('Image:', temp_image_path)
+        print('Predicted Class:', label_predicted)
+        print('Freshness:', freshness)
+        print('Accuracy: {:.2f}%'.format(accuracy))
 
-# Calculate prediction accuracy
-predicted_prob = np.max(predictions)
-accuracy = predicted_prob * 100
+        return 'Image uploaded and scanned!'
 
-# Print the predicted class, freshness, and accuracy
-print('Image:', image_path)
-print('Predicted Class:', label_predicted)
-print('Freshness:', freshness)
-print('Accuracy: {:.2f}%'.format(accuracy))
+    return 'No image uploaded!', 400
+
+if name == '_main_':
+    app.run()
 
