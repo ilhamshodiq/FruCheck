@@ -30,9 +30,10 @@ FruCheck is a fruit and vegetable spoilage detection application. Using Artifici
 ### API
 
 ## Authors
-- [@Muhammad Emillul Fata](https://github.com/emlfata)
-- [@Salmavita Apsarini](https://github.com/salmavitaa24)
-- [@Khailila Eka Oktavianingsih](https://github.com/khailila)
-- [@Yoshi Inne Herawati](https://github.com/yoshiinne64)
-- [@Ilham Shodiq Mu’arif Billah](https://github.com/ilhamshodiq)
-- [@Tegar Nur Hidayat](https://github.com/tegarnurhidayat)
+This project is maintained by the following contributors:
+- [Muhammad Emillul Fata](https://github.com/emlfata)
+- [Salmavita Apsarini](https://github.com/salmavitaa24)
+- [Khailila Eka Oktavianingsih](https://github.com/khailila)
+- [Yoshi Inne Herawati](https://github.com/yoshiinne64)
+- [Ilham Shodiq Mu’arif Billah](https://github.com/ilhamshodiq)
+- [Tegar Nur Hidayat](https://github.com/tegarnurhidayat)
