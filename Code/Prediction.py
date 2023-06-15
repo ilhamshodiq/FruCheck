@@ -17,7 +17,7 @@ from google.cloud import storage
 app = Flask(name)
 
 # Initialize the H5 model
-model = load_model('./TF SERVING/frucheck-model.h5')
+model = load_model('./Model/model-frucheck.h5')
 
 # Initialize the Google Cloud storage client
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./serviceAccountKey.json"
