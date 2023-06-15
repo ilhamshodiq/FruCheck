@@ -27,7 +27,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="32dp"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -44,7 +44,7 @@
                     android:id="@+id/ivDetailPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerInside"
+                    android:scaleType="centerCrop"
                     android:contentDescription="@string/detail_photo"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="24sp"
@@ -66,37 +66,56 @@
                 tools:text="@string/nama_buah"
                 />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/subcolor"/>
 
-            <TextView
-                android:id="@+id/tvTitleManfaat"
+                    <TextView
+                        android:id="@+id/tvTitleManfaat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/manfaat_buah"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvFruitName"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/linearmanfaat"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/manfaat_buah"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvFruitName"
-                />
-
-            <LinearLayout
-                android:id="@+id/linearmanfaat"
-                android:orientation="vertical"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
+                android:layout_height="2dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/subcolor"/>
             <TextView
                 android:id="@+id/tvTitleNutrisi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/kandungan_buah"
                 android:textSize="18sp"
@@ -108,8 +127,6 @@
                 android:id="@+id/tvFruitNutrisiHead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="14sp"
                 android:textStyle="normal"
@@ -121,17 +138,28 @@
             <LinearLayout
                 android:id="@+id/linearnutrisi"
                 android:orientation="vertical"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+        </LinearLayout>
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/subcolor"/>
             <TextView
                 android:id="@+id/tvTitlePenyimpanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/penyimpanan_buah"
                 android:textSize="18sp"
@@ -143,11 +171,10 @@
             <LinearLayout
                 android:id="@+id/linearpenyimpanan"
                 android:orientation="vertical"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvTitlePenyimpanan"/>
+        </LinearLayout>
 
         </LinearLayout>
 

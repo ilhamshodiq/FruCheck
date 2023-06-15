@@ -65,4 +65,6 @@
     <string name="kandungan_buah">Kandungan Nutrisi</string>
     <string name="penyimpanan_buah">Penyimpanan</string>
     <string name="nutrisi_head">nutrisi head</string>
+    <string name="hapus_foto">Hapus Foto</string>
+    <string name="submit">Submit</string>
 </resources>

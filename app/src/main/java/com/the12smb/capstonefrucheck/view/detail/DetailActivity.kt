@@ -48,7 +48,7 @@ class DetailActivity : AppCompatActivity() {
             val numTextViews = it.manfaat?.size
             for (i in 0 until numTextViews!!) {
                 val textView = TextView(this)
-                textView.text = "- ${it.manfaat[i]}"
+                textView.text = "● ${it.manfaat[i]}"
                 textView.textSize = 16f
                 linearmanfaat.addView(textView)
             }
@@ -57,7 +57,7 @@ class DetailActivity : AppCompatActivity() {
             val numTextViews2 = it.nutrisi?.size
             for (i in 0 until numTextViews2!!) {
                 val textView = TextView(this)
-                textView.text = "- ${it.nutrisi[i]}"
+                textView.text = "● ${it.nutrisi[i]}"
                 textView.textSize = 16f
                 linearnutrisi.addView(textView)
             }
@@ -66,7 +66,7 @@ class DetailActivity : AppCompatActivity() {
             val numTextViews3 = it.penyimpanan?.size
             for (i in 0 until numTextViews3!!) {
                 val textView = TextView(this)
-                textView.text = "- ${it.penyimpanan[i]}"
+                textView.text = "● ${it.penyimpanan[i]}"
                 textView.textSize = 16f
                 linearpenyimpanan.addView(textView)
             }
@@ -76,7 +76,7 @@ class DetailActivity : AppCompatActivity() {
                 tvFruitName.text = it.nama
                 tvFruitNutrisiHead.text = it.nutrisiHead
                 Glide.with(this@DetailActivity)
-                    .load(it.photoUrl)
+                    .load(it.photoUrlDetail)
                     .into(ivDetailPhoto)
             }
             supportActionBar?.title = it.nama
