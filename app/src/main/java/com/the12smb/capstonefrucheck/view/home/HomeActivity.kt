@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.the12smb.capstonefrucheck.R
 import com.the12smb.capstonefrucheck.data.remote.response.BuahItem
 import com.the12smb.capstonefrucheck.databinding.ActivityHomeBinding
-import com.the12smb.capstonefrucheck.databinding.ActivityMainBinding
 import com.the12smb.capstonefrucheck.view.profile.ProfileActivity
 import com.the12smb.capstonefrucheck.view.upload.UploadActivity
 

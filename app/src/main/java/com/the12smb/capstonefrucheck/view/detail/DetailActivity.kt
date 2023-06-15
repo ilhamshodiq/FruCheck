@@ -42,7 +42,6 @@ class DetailActivity : AppCompatActivity() {
             showLoading(it)
         }
 
-
         detailViewModel.detail.observe(this) {
 
             val linearmanfaat: LinearLayout = binding.linearmanfaat
@@ -75,13 +74,20 @@ class DetailActivity : AppCompatActivity() {
 
             binding.apply {
                 tvFruitName.text = it.nama
+                tvFruitNutrisiHead.text = it.nutrisiHead
                 Glide.with(this@DetailActivity)
                     .load(it.photoUrl)
                     .into(ivDetailPhoto)
             }
-            supportActionBar?.title = "Detail ${it.nama}"
+            supportActionBar?.title = it.nama
         }
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun setupViewModel() {

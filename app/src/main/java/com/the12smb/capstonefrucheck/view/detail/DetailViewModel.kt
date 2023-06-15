@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.the12smb.capstonefrucheck.data.local.model.UserPreference
 import com.the12smb.capstonefrucheck.data.remote.response.Data
 import com.the12smb.capstonefrucheck.data.remote.response.DetailBuahResponse
 import com.the12smb.capstonefrucheck.data.remote.retrofit.ApiConfig
@@ -12,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailViewModel(private val pref: UserPreference) : ViewModel() {
+class DetailViewModel : ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading

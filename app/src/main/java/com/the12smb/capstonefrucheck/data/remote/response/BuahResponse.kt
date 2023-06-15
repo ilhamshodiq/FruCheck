@@ -34,6 +34,12 @@ data class BuahItem(
 	@field:SerializedName("olahan")
 	val olahan: List<String?>? = null,
 
+	@field:SerializedName("nutrisiHead")
+	val nutrisiHead: String? = null,
+
 	@field:SerializedName("id")
-	val id: String? = null
+	val id: String? = null,
+
+	@field:SerializedName("photoUrlDetail")
+	val photoUrlDetail: String? = null
 )

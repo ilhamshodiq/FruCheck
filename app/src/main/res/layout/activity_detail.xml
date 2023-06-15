@@ -54,30 +54,33 @@
                 android:id="@+id/tvFruitName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvImage"
-                tools:text="@string/nama_buah"/>
+                tools:text="@string/nama_buah"
+                />
 
 
             <TextView
                 android:id="@+id/tvTitleManfaat"
-                android:text="@string/manfaat_buah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="24dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/manfaat_buah"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvFruitName"/>
+                app:layout_constraintTop_toBottomOf="@id/tvFruitName"
+                />
 
             <LinearLayout
                 android:id="@+id/linearmanfaat"
@@ -92,13 +95,28 @@
                 android:id="@+id/tvTitleNutrisi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/kandungan_buah"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@string/kandungan_buah"/>
+                />
+            <TextView
+                android:id="@+id/tvFruitNutrisiHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNutrisi"
+                tools:text="@string/nutrisi_head" />
 
             <LinearLayout
                 android:id="@+id/linearnutrisi"
@@ -112,13 +130,15 @@
                 android:id="@+id/tvTitlePenyimpanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/penyimpanan_buah"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@string/penyimpanan_buah"/>
+                />
 
             <LinearLayout
                 android:id="@+id/linearpenyimpanan"
