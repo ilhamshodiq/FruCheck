@@ -1,0 +1,8 @@
+flask
+pillow
+numpy
+tensorflow
+google-cloud-storage
+gunicorn
+keras
+flask-cors

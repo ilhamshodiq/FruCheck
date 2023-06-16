@@ -1,0 +1,10 @@
+runtime: python39
+service: ml
+entrypoint: gunicorn -b :$PORT app:app
+instance_class: F4
+
+env_variables:
+  PORT: "8080"
+  GOOGLE_APPLICATION_CREDENTIALS: "./serviceAccountKey.json"
+  FIRESTORE_PROJECT_ID: capstone-frucheck
+  CLOUD_STORAGE_BUCKET: history-user
