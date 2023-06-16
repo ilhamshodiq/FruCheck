@@ -29,23 +29,21 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="300dp"
-                    android:layout_height="120dp"
+                    android:layout_width="320dp"
+                    android:layout_height="160dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
                     app:cardBackgroundColor="#BDBBB5"
                     >
-
-                    <TextView
-                        android:id="@+id/textView"
+                    <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textAlignment="center"
-                        tools:text="Selamat Datang diindomaret"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/banner"
+                        android:importantForAccessibility="no"
                         />
                 </androidx.cardview.widget.CardView>
 

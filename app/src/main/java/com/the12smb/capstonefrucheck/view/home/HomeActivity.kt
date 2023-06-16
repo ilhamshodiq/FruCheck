@@ -7,21 +7,33 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.the12smb.capstonefrucheck.R
 import com.the12smb.capstonefrucheck.data.remote.response.BuahItem
 import com.the12smb.capstonefrucheck.databinding.ActivityHomeBinding
+import com.the12smb.capstonefrucheck.view.login.LoginActivity
 import com.the12smb.capstonefrucheck.view.profile.ProfileActivity
 import com.the12smb.capstonefrucheck.view.upload.UploadActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private val homeViewModel: HomeViewModel by viewModels()
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        auth = Firebase.auth
+//        val firebaseUser = auth.currentUser
+//        if (firebaseUser == null) {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            finish()
+//            return
+//        }
 
         setupView()
         setupBottomNav()
@@ -33,11 +45,6 @@ class HomeActivity : AppCompatActivity() {
         homeViewModel.getStories()
         val layoutManager = GridLayoutManager(this, 2)
         binding.rvContent.layoutManager = layoutManager
-
-        val itemDecoration = DividerItemDecoration(this, layoutManager.layoutDirection)
-        val itemDecoration2 = DividerItemDecoration(this, layoutManager.orientation)
-        binding.rvContent.addItemDecoration(itemDecoration)
-        binding.rvContent.addItemDecoration(itemDecoration2)
 
         homeViewModel.listBuah.observe(this) { listBuah ->
             binding.rvContent.adapter = showRecyclerView(listBuah)

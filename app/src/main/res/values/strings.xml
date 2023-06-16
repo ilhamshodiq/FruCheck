@@ -70,4 +70,7 @@
     <string name="title_activity_camera">CameraActivity</string>
     <string name="buah">Buah:</string>
     <string name="kondisi">Kondisi:</string>
+    <string name="welcome_header">Halo!</string>
+    <string name="login_desc">Silahkan masuk menggunakan akun Google untuk melanjutkan</string>
+    <string name="google">Google</string>
 </resources>
