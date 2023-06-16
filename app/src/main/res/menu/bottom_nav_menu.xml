@@ -3,17 +3,18 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/logo_home"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_upload"
-        android:icon="@drawable/baseline_photo_camera_24"
+        android:icon="@drawable/logo_scan"
         android:title="@string/upload" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/baseline_person_outline_24"
-        android:title="@string/profile" />
+        android:icon="@drawable/logo_profile"
+        android:title="@string/profile"
+        />
 
 </menu>

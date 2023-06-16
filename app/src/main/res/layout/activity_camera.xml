@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.camera.CameraActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/scanPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.camera.view.PreviewView>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-16dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/frame_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/framecamera"
+        app:layout_constraintBottom_toTopOf="@+id/tv_camera_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_camera_guide"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_back"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:text="Arahkan kamera ke buah untuk mendeteksi, lalu tekan tombol dibawah"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scanPreview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_camera" />
+
+    <ImageView
+        android:id="@+id/captureImage"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="Capture Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icon_snap"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/switchCamera"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="rotation camera"
+        app:layout_constraintBottom_toBottomOf="@+id/captureImage"
+        app:layout_constraintEnd_toStartOf="@+id/captureImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/captureImage"
+        app:srcCompat="@drawable/icon_rotate_camera" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

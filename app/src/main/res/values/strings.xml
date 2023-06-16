@@ -2,8 +2,8 @@
     <string name="app_name">FruCheck</string>
     <string name="login">Login</string>
     <string name="daftar">Daftar</string>
-    <string name="home">Home</string>
-    <string name="profile">Profile</string>
+    <string name="home">Beranda</string>
+    <string name="profile">Profil</string>
     <string name="camera">camera</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tombol_camera">tombol camera</string>
@@ -12,8 +12,8 @@
     <string name="tombol_hapus_gambar">tombol hapus gambar</string>
     <string name="tombol_submit">tombol submit</string>
     <string name="tombol_logout">tombol logout</string>
-    <string name="title_home">Home</string>
-    <string name="upload">Upload</string>
+    <string name="title_home">Beranda</string>
+    <string name="upload">FruCheck</string>
     <string name="profile_pic">profile pic</string>
     <string name="title_activity_detail">DetailActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -67,4 +67,5 @@
     <string name="nutrisi_head">nutrisi head</string>
     <string name="hapus_foto">Hapus Foto</string>
     <string name="submit">Submit</string>
+    <string name="title_activity_camera">CameraActivity</string>
 </resources>

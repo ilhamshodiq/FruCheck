@@ -1,13 +1,12 @@
 package com.the12smb.capstonefrucheck.view.home
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.the12smb.capstonefrucheck.R
 import com.the12smb.capstonefrucheck.data.remote.response.BuahItem
 import com.the12smb.capstonefrucheck.databinding.ActivityHomeBinding
@@ -66,6 +65,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setupBottomNav() {
         binding.bottomnav.selectedItemId = R.id.navigation_home
+        binding.bottomnav.itemIconTintList= null
 
         binding.bottomnav.setOnItemSelectedListener{
             when(it.itemId){

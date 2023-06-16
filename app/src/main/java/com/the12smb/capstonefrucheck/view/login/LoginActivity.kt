@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 import com.the12smb.capstonefrucheck.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)

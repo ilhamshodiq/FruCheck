@@ -21,6 +21,7 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun setupBottomNav() {
         binding.bottomnav.selectedItemId = R.id.navigation_profile
+        binding.bottomnav.itemIconTintList= null
 
         binding.bottomnav.setOnItemSelectedListener{
             when(it.itemId){
