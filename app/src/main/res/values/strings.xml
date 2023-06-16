@@ -68,4 +68,6 @@
     <string name="hapus_foto">Hapus Foto</string>
     <string name="submit">Submit</string>
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="buah">Buah:</string>
+    <string name="kondisi">Kondisi:</string>
 </resources>

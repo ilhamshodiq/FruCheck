@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.the12smb.capstonefrucheck.data.local.model.UserPreference
+import com.the12smb.capstonefrucheck.data.remote.response.Data
 import com.the12smb.capstonefrucheck.data.remote.response.UploadResponse
 import com.the12smb.capstonefrucheck.data.remote.retrofit.ApiConfig
 import okhttp3.MediaType.Companion.toMediaType
@@ -19,13 +20,16 @@ class UploadViewModel (private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _hasilscan = MutableLiveData<UploadResponse>()
+    val hasilscan: LiveData<UploadResponse> = _hasilscan
+
     fun upload(photo: File) : LiveData<Boolean>{
         _isLoading.value = true
         val uploadImageRequest = MutableLiveData<Boolean>() // untuk check apakah upload berhasil
 
         val requestImageFile = photo.asRequestBody("image/jpeg".toMediaType())
         val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-            "photo",
+            "image",
             photo.name,
             requestImageFile
         )
@@ -39,6 +43,7 @@ class UploadViewModel (private val pref: UserPreference) : ViewModel() {
                 if (response.isSuccessful) {
                     uploadImageRequest.value = response.isSuccessful
                     _isLoading.value = false
+                    _hasilscan.value = response.body()
                 } else {
                     _isLoading.value = false
                     Log.e(TAG, "onFailureResponse: ${response.message()}")

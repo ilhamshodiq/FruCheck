@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.the12smb.capstonefrucheck.R
 import com.the12smb.capstonefrucheck.data.local.model.UserPreference
 import com.the12smb.capstonefrucheck.databinding.ActivityUploadBinding
+import com.the12smb.capstonefrucheck.view.ViewModelFactory
 import com.the12smb.capstonefrucheck.view.camera.CameraActivity
 import com.the12smb.capstonefrucheck.view.home.HomeActivity
 import com.the12smb.capstonefrucheck.view.profile.ProfileActivity
@@ -42,9 +43,9 @@ class UploadActivity : AppCompatActivity() {
         binding = ActivityUploadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupViewModel()
         checkPermission()
         setupBottomNav()
-//        setupViewModel()
         setupView()
         setupAction()
     }
@@ -63,19 +64,18 @@ class UploadActivity : AppCompatActivity() {
         }
     }
 
-//    private fun setupViewModel() {
-//        val pref = UserPreference.getInstance(dataStore)
-//        addStoryViewModel =
-//            ViewModelProvider(this, ViewModelFactory(pref))[AddStoryViewModel::class.java]
-//    }
-
+    private fun setupViewModel() {
+        val pref = UserPreference.getInstance(dataStore)
+        uploadViewModel =
+            ViewModelProvider(this, ViewModelFactory(pref))[UploadViewModel::class.java]
+    }
 
     private fun setupView() {
         supportActionBar?.title = getString(R.string.upload)
 
-//        addStoryViewModel.isLoading.observe(this) {
-//            showLoading(it)
-//        }
+        uploadViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
     }
 
     private fun setupAction() {
@@ -87,7 +87,7 @@ class UploadActivity : AppCompatActivity() {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            val chooser = Intent.createChooser(intent, "Choose a Picture")
+            val chooser = Intent.createChooser(intent, "Pilih Sebuah Gambar")
             launcherIntentGallery.launch(chooser)
         }
         binding.buttonDelete.setOnClickListener{
@@ -100,16 +100,17 @@ class UploadActivity : AppCompatActivity() {
                 val uploadImageRequest = uploadViewModel.upload(file)
                 uploadImageRequest.observe(this) {
                     if (it) {
-                        Toast.makeText(this, "Story Uploaded!", Toast.LENGTH_SHORT).show()
-//                        startActivity(Intent(this, MainActivity::class.java))
-//                        finish()
+                        Toast.makeText(this, "Foto Terupload!", Toast.LENGTH_SHORT).show()
+                        uploadViewModel.hasilscan.observe(this) { hasilscan ->
+                            binding.tvFruit.text = hasilscan.predictedClass
+                            binding.tvCondition.text = hasilscan.freshness
+                        }
                     } else {
-                        Toast.makeText(this, "Story not Uploaded!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Foto tidak terupload", Toast.LENGTH_SHORT).show()
                     }
                 }
-
             } else {
-                Toast.makeText(this, "Please input picture first!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Tolong masukan foto buahnya dulu!", Toast.LENGTH_SHORT).show()
             }
         }
     }

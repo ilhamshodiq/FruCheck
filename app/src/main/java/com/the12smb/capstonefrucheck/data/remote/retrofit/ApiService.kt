@@ -28,4 +28,6 @@ interface ApiService2 {
     fun uploadImage(
         @Part image: MultipartBody.Part
     ): Call<UploadResponse>
+//    @POST("upload")
+//    fun uploadImage()
 }
